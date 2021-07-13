@@ -18,7 +18,7 @@ const GoalInput = ({addHandler, visible, onCancel}) => {
                 label="Type Here"
                 value={title}
                 onChangeText={title => setTitle(title)}
-                right={<TextInput.Icon style={{color: 'red'}} onPress={() => pressHandler(title)} name="plus" />}
+                right={<TextInput.Icon color="gray" onPress={() => pressHandler(title)} name="plus" />}
 
             />
             {/*<View style={styles.buttonContainer}>*/}

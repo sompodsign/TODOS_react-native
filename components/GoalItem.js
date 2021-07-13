@@ -14,21 +14,26 @@ const GoalItem = ({ items, deleteItem }) => {
         keyExtractor={(item) => item.id.toString()}
         data={items}
         renderItem={({ item }) => (
-
+            <Card
+            mode='outlined'
+            style={{backgroundColor: '#293B5F'}}
+            >
             <Card.Title
             style={{color: 'green'}}
              onPress={deleteItem}
               title={item.title}
               titleStyle={{color: "white"}}
-              subtitle={`${item.date}/0${item.month}`}
+              subtitle={`${item.date}/0${item.month}/${item.year}`}
               subtitleStyle={{color: '#EEEEEE'}}
-              left={(props) => <Avatar.Icon {...props} icon="calendar-check" />}
+              left={(props) => <Avatar.Icon color="#B2AB8C" style={{backgroundColor: "#47597E"}} {...props} icon="calendar-check" />}
               right={(props) => (
-                <IconButton {...props} icon="check" onPress={() => deleteItem(item.id)} />
+                <IconButton {...props} color="#B2AB8C" icon="check" onPress={() => deleteItem(item.id)} />
               )}
             />
+                </Card>
         )}
       />
+
     </View>
   );
 };

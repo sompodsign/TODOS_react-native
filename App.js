@@ -3,10 +3,10 @@ import {ImageBackground, StyleSheet, View,} from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 import Header from "./components/Header";
-import {Button} from 'react-native-paper';
 
 const date = new Date().getDate(); //To get the Current Date
 const month = new Date().getMonth() + 1; //To get the Current Month
+const year = new Date().getFullYear(); //To get the Current Year
 
 export default function App() {
 
@@ -14,7 +14,7 @@ export default function App() {
     const [isAddMode, setIsAddMode] = useState(false);
 
     const pressHandler = (title) => {
-        setTodos([...todos, {id: todos.length + 1, title: title, date: date, month: month}]);
+        setTodos([...todos, {id: todos.length + 1, title: title, date: date, month: month, year: year}]);
         setIsAddMode(false);
     };
 
@@ -27,10 +27,7 @@ export default function App() {
     };
 
     return (
-        <ImageBackground
-            source={require("./assets/back.png")}
-            style={styles.backgroundImage}
-        >
+        <View style={styles.background}>
             <Header/>
             <View style={styles.container}>
 
@@ -46,11 +43,15 @@ export default function App() {
             </View>
 
 
-        </ImageBackground>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
+    background: {
+      backgroundColor: '#47597E',
+        flex: 1,
+    },
     container: {
         padding: 30,
         marginTop: 10,
