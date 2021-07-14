@@ -14,17 +14,14 @@ const GoalInput = ({addHandler, visible, onCancel}) => {
 
         <View>
             <TextInput
+                style={{backgroundColor: '#DBE6FD', marginTop: 10}}
                 mode='focused'
                 label="Type Here"
                 value={title}
                 onChangeText={title => setTitle(title)}
-                right={<TextInput.Icon color="gray" onPress={() => pressHandler(title)} name="plus" />}
+                right={<TextInput.Icon style={{color: '#293B5F', fontSize: 34}} onPress={() => pressHandler(title)} name="plus" />}
 
             />
-            {/*<View style={styles.buttonContainer}>*/}
-            {/*    <Button style={styles.button} color="#548CA8" icon="plus" mode="contained" onPress={() => pressHandler(title)}>Add*/}
-            {/*        Task </Button>*/}
-            {/*</View>*/}
         </View>
     );
 };
